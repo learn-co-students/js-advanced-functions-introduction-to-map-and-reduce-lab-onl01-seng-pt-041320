@@ -1,57 +1,37 @@
 // Your code here
 
-// mapToNegativize returns an array with all values made negative
-// 1) transforms correctly
-
 function mapToNegativize(array) {
-  let newArray = []
-for (let i = 0; i < array.length; i++) {
-    newArray.push(-1 * array[i])
-}
-return newArray
-
+  // let newArray = []
+  return array.map(arr => arr * -1);
 }
 
 function mapToNoChange(array) {
-    for (let i = 0; i < array.length; i++) {
-}
- return array
+  return array.map(arr => arr);
 }
 
  function mapToDouble(array) {
-    let newArray = []
-    for (let i = 0; i < array.length; i++) {
-        newArray.push(2 * array[i])
-    }
-    return newArray
+  return array.map(arr => arr * 2);
 }
 
-function mapToSquare(array) {
-     let squareArray = []
-    for (let i = 0; i < array.length; i++) {
-        squareArray.push(array[i] * array[i])
-    }
-    return squareArray
-}
+ function mapToSquare(array) {
+  return array.map(arr => arr ** 2);
+ }
 
-function reduceToTotal(array, startingPoint = 0) {
-    let sum = startingPoint
-    for (let i = 0; i < array.length; i++ ) {
-        sum = sum + array[i]
-    }
-    return sum
+function reduceToTotal(array, startPoint = 0) {
+  let total = (sum, val) => sum + val;
+  return array.reduce(total, startPoint);
   }
   
-  function reduceToAllTrue(array) {
-    for (let i = 0; i < array.length; i++ ) {
-      if (!array[i]) return false
+  function reduceToAllTrue(src) {
+    for (let i = 0; i < src.length; i++ ) {
+      if (!src[i]) return false
     }
     return true
   }
- 
-function reduceToAnyTrue(array) {
-    for (let i = 0; i < array.length; i++ ) {
-        if (array[i] === true) return true;
-      }
-      return false
-}
+  
+  function reduceToAnyTrue(src) {
+    for (let i = 0; i < src.length; i++ ) {
+      if (src[i]) return true
+    }
+    return false
+  }
